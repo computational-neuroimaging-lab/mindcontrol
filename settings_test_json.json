@@ -1,0 +1,352 @@
+[
+    {
+        "check_masks": [
+            "sub-NDARAA075AMK/anat/sub-NDARAA075AMK_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 6.728039999999999,
+            "EHQ_Total": 65.57,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAA075AMK_T1w",
+        "subject_id": "sub-NDARAA075AMK"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAA536PTU/anat/sub-NDARAA536PTU_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 11.998402,
+            "EHQ_Total": -86.71,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAA536PTU_T1w",
+        "subject_id": "sub-NDARAA536PTU"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAA948VFH/anat/sub-NDARAA948VFH_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 7.982660000000001,
+            "EHQ_Total": 90.05,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAA948VFH_T1w",
+        "subject_id": "sub-NDARAA948VFH"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAC853DTE/anat/sub-NDARAC853DTE_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 10.227469000000001,
+            "EHQ_Total": 83.38,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAC853DTE_T1w",
+        "subject_id": "sub-NDARAC853DTE"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAC904DMU/anat/sub-NDARAC904DMU_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 11.33858,
+            "EHQ_Total": 71.17,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAC904DMU_T1w",
+        "subject_id": "sub-NDARAC904DMU"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAD481FXF/anat/sub-NDARAD481FXF_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 16.445242,
+            "EHQ_Total": 60.03,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAD481FXF_T1w",
+        "subject_id": "sub-NDARAD481FXF"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAE012DGA/anat/sub-NDARAE012DGA_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 6.927903,
+            "EHQ_Total": 100.05,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAE012DGA_T1w",
+        "subject_id": "sub-NDARAE012DGA"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAE199TDD/anat/sub-NDARAE199TDD_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 8.984029,
+            "EHQ_Total": 63.37,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAE199TDD_T1w",
+        "subject_id": "sub-NDARAE199TDD"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAG340ERT/anat/sub-NDARAG340ERT_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 10.725872,
+            "EHQ_Total": 93.38,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAG340ERT_T1w",
+        "subject_id": "sub-NDARAG340ERT"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAH948UF0/anat/sub-NDARAH948UF0_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 11.582249000000001,
+            "EHQ_Total": 55.63,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAH948UF0_T1w",
+        "subject_id": "sub-NDARAH948UF0"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAJ366ZFA/anat/sub-NDARAJ366ZFA_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 10.211155999999999,
+            "EHQ_Total": 33.35,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAJ366ZFA_T1w",
+        "subject_id": "sub-NDARAJ366ZFA"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAK187ZLP/anat/sub-NDARAK187ZLP_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 6.870408,
+            "EHQ_Total": 6.67,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAK187ZLP_T1w",
+        "subject_id": "sub-NDARAK187ZLP"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAM277WZT/anat/sub-NDARAM277WZT_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 14.320670000000002,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAM277WZT_T1w",
+        "subject_id": "sub-NDARAM277WZT"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAM675UR8/anat/sub-NDARAM675UR8_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 5.548482,
+            "EHQ_Total": 53.36,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAM675UR8_T1w",
+        "subject_id": "sub-NDARAM675UR8"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAN814UPR/anat/sub-NDARAN814UPR_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 8.940679,
+            "EHQ_Total": 20.01,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAN814UPR_T1w",
+        "subject_id": "sub-NDARAN814UPR"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAP176AD1/anat/sub-NDARAP176AD1_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 9.198151,
+            "EHQ_Total": 100.05,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAP176AD1_T1w",
+        "subject_id": "sub-NDARAP176AD1"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAP782TVC/anat/sub-NDARAP782TVC_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 7.437257000000001,
+            "EHQ_Total": -20.01,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAP782TVC_T1w",
+        "subject_id": "sub-NDARAP782TVC"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAR025WX4/anat/sub-NDARAR025WX4_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 8.874628999999999,
+            "EHQ_Total": -93.38,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAR025WX4_T1w",
+        "subject_id": "sub-NDARAR025WX4"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAT100AEQ/anat/sub-NDARAT100AEQ_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 16.489276,
+            "EHQ_Total": 81.17,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAT100AEQ_T1w",
+        "subject_id": "sub-NDARAT100AEQ"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAT299YRR/anat/sub-NDARAT299YRR_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 7.579625,
+            "EHQ_Total": -60.03,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAT299YRR_T1w",
+        "subject_id": "sub-NDARAT299YRR"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAT581NDH/anat/sub-NDARAT581NDH_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 19.207734,
+            "EHQ_Total": 100.05,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAT581NDH_T1w",
+        "subject_id": "sub-NDARAT581NDH"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAV610EY3/anat/sub-NDARAV610EY3_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 11.68355,
+            "EHQ_Total": 97.85,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAV610EY3_T1w",
+        "subject_id": "sub-NDARAV610EY3"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAV747WVL/anat/sub-NDARAV747WVL_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 10.044261,
+            "EHQ_Total": 86.78,
+            "Sex": 1.0
+        },
+        "name": "sub-NDARAV747WVL_T1w",
+        "subject_id": "sub-NDARAV747WVL"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAV894XWD/anat/sub-NDARAV894XWD_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 10.468628,
+            "EHQ_Total": 71.17,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAV894XWD_T1w",
+        "subject_id": "sub-NDARAV894XWD"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAV945MCQ/anat/sub-NDARAV945MCQ_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 16.080538,
+            "EHQ_Total": 65.63,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAV945MCQ_T1w",
+        "subject_id": "sub-NDARAV945MCQ"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAW179AYF/anat/sub-NDARAW179AYF_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 11.771844999999999,
+            "EHQ_Total": 10.01,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAW179AYF_T1w",
+        "subject_id": "sub-NDARAW179AYF"
+    },
+    {
+        "check_masks": [
+            "sub-NDARAY238DFL/anat/sub-NDARAY238DFL_T1w.nii.gz"
+        ],
+        "entry_type": "T1w",
+        "metrics": {
+            "Age": 6.552817,
+            "EHQ_Total": 30.08,
+            "Sex": 0.0
+        },
+        "name": "sub-NDARAY238DFL_T1w",
+        "subject_id": "sub-NDARAY238DFL"
+    }
+]

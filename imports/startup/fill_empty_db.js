@@ -13,7 +13,14 @@ if (Meteor.isServer) {
         //console.log(JSON.parse(HTTP.get("http:///private/generator.json").content))
         source_json = Meteor.settings.public.startup_json //JSON.parse(Assets.getText("generator.json"));
         //console.log(HTTP.get(source_json).content)
+  
+
+        //myobject = JSON.parse(Storage.readSync(source_json))
+
         myobject = JSON.parse(HTTP.get(source_json).content)
+
+
+
         console.log("my object is", myobject.length)
         if (Meteor.settings.public.load_if_empty){
           console.log("loading???")

@@ -1,0 +1,146 @@
+{
+  "public": {
+    "startup_json":"http://www.json-generator.com/api/json/get/bTBPKTXEya?indent=2",
+    "load_if_empty": true,
+    "use_custom": true,
+    "needs_consent": false,
+    "modules": [
+      {
+        "name": "ACDS",
+        "entry_type": "ACDS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          },
+          {
+            "function_name": "get_qc_ave_field",
+            "id": "average_vote",
+            "name": "QC vote"
+          },
+          {
+            "function_name": null,
+            "id": "num_votes",
+            "name": "# votes"
+          },
+          {
+            "function_name": null,
+            "id": "quality_check.notes_QC",
+            "name": "Notes"
+          }
+        ],
+        "metric_names": ["ACDS_01","ACDS_02","ACDS_03","ACDS_04","ACDS_05","ACDS_06","ACDS_07","ACDS_08","ACDS_09","ACDS_10","ACDS_11","ACDS_12","ACDS_13","ACDS_14","ACDS_15","ACDS_16","ACDS_17","ACDS_18","ACDS_19","ACDS_20","ACDS_21","ACDS_22","ACDS_23","ACDS_24","ACDS_25","ACDS_26","ACDS_27","ACDS_28","ACDS_29","ACDS_30","ACDS_31","ACDS_32","ACDS_33","ACDS_34","ACDS_35","ACDS_36","ACDS_37","ACDS_38","ACDS_39","ACDS_40","ACDS_41","ACDS_42"],
+        "graph_type": "barplot",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+      },
+      {
+        "name": "ACTIGRAPH",
+        "entry_type": "ACTIGRAPH",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          },
+          {
+            "function_name": "get_qc_ave_field",
+            "id": "average_vote",
+            "name": "QC vote"
+          },
+          {
+            "function_name": null,
+            "id": "num_votes",
+            "name": "# votes"
+          },
+          {
+            "function_name": null,
+            "id": "quality_check.notes_QC",
+            "name": "Notes"
+          }
+        ],
+        "metric_names": ["ACTIGRAPH_01","ACTIGRAPH_02","ACTIGRAPH_03","ACTIGRAPH_04","ACTIGRAPH_05","ACTIGRAPH_06","ACTIGRAPH_07","ACTIGRAPH_08","ACTIGRAPH_09","ACTIGRAPH_10","ACTIGRAPH_11","ACTIGRAPH_12","ACTIGRAPH_13","ACTIGRAPH_14","ACTIGRAPH_15","ACTIGRAPH_16","ACTIGRAPH_17","ACTIGRAPH_18","ACTIGRAPH_19","ACTIGRAPH_20","ACTIGRAPH_21","ACTIGRAPH_22","ACTIGRAPH_23","ACTIGRAPH_24"],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+      },
+      {
+        "name": "AGE",
+        "entry_type": "AGE",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          },
+          {
+            "function_name": "get_qc_ave_field",
+            "id": "average_vote",
+            "name": "QC vote"
+          },
+          {
+            "function_name": null,
+            "id": "num_votes",
+            "name": "# votes"
+          },
+          {
+            "function_name": null,
+            "id": "quality_check.notes_QC",
+            "name": "Notes"
+          }
+        ],
+        "metric_names": ["AGE_01","AGE_02","AGE_03","AGE_04"],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+      },
+      {
+        "name": "ANT",
+        "entry_type": "ANT",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          },
+          {
+            "function_name": "get_qc_ave_field",
+            "id": "average_vote",
+            "name": "QC vote"
+          },
+          {
+            "function_name": null,
+            "id": "num_votes",
+            "name": "# votes"
+          },
+          {
+            "function_name": null,
+            "id": "quality_check.notes_QC",
+            "name": "Notes"
+          }
+        ],
+        "metric_names": ["ANT_01","ANT_02","ANT_03","ANT_04","ANT_05","ANT_06"],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+      }
+  ]
+  }
+}

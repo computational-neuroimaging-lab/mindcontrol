@@ -17,5 +17,5 @@ for f in files:
     Sid = f.split("/")[0]
     entry["subject_id"] = Sid #need to be unique
     entry["name"] = Sid #needs to be unique
-    entry["check_masks"] = [f]
+#    entry["check_masks"] = [f]
     coll.insert_one(entry)

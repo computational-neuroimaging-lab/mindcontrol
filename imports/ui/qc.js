@@ -63,7 +63,7 @@ function arraysEqual(a, b) {
   return true;
 }
 
-var addPapaya = function(data, entry_type, template_instance, callback){
+/*var addPapaya = function(data, entry_type, template_instance, callback){
     //if (papayaContainers.length == 0){
     //Meteor.call("get_generator", entry_type, function(err, res){
     var res = _.find(Meteor.settings.public.modules, function(x){return x.entry_type == entry_type})
@@ -141,7 +141,7 @@ var addPapaya = function(data, entry_type, template_instance, callback){
 
         //} //endif
     }
-
+*/
 var template_decorator = function(template_instance_value, lp, idx, key){
     var update_point_note = function(res, val){
             lp[idx][key] = val
@@ -1041,7 +1041,7 @@ Template.view_images.rendered = function(){
 
                 console.log("adding papaya")
 
-                addPapaya(output, qc.entry_type, Template.instance())
+                //addPapaya(output, qc.entry_type, Template.instance())
                 load_hotkeys(Template.instance())
 
 

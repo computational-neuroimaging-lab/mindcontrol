@@ -46,6 +46,28 @@ get_metrics = function(entry_type){
         return Session.get(entry_type+"_metrics")
 }
 
+render_barplot = function(entry_type){
+    var metric = Session.get("current_"+entry_type)
+    if(metric == null){
+      var all_metrics = Session.get(entry_type+"_metrics")
+      if(all_metrics != null){
+        Session.set("current_"+entry_type, all_metrics[0])
+      }
+    }
+
+    if(metric != null){
+      var filter = get_filter(entry_type)
+      Meteor.call("getBarplotData", entry_type, metric, filter, function(error, result){
+        var data = result["barplot"]
+        var minval = result["minval"]
+        var maxval = result["maxval"]
+        if(data.length){
+          do_d3_histogram(data, minval, maxval, metric, "#d3vis_"+entry_type, entry_type)
+        }
+      });
+    }
+}
+
 render_histogram = function(entry_type){
                 var metric = Session.get("current_"+entry_type)//"Amygdala"
                 if (metric == null){
@@ -98,6 +120,9 @@ Template.module.helpers({
   date_histogram: function(){
     return this.graph_type == "datehist"
   },
+  barplot: function(){
+    return this.graph_type == "barplot"
+  },
   metric: function(){
           return get_metrics(this.entry_type)
       },
@@ -133,6 +158,10 @@ Template.base.rendered = function(){
           Meteor.call("getDateHist", function(error, result){
               do_d3_date_histogram(result, "#d3vis_date_"+self.entry_type)
               })
+        }
+        else if (self.graph_type == "barplot") {
+          console.log("rendering barplot", self.entry_type)
+          render_barplot(self.entry_type)
         }
       })
   });

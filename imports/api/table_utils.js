@@ -1,4 +1,4 @@
-
+/*
 label_qa = function(name,object){
             if (!name){
                 html = '<span class="label label-warning fsqc -1">Not Checked</span>'
@@ -28,7 +28,7 @@ label_qa = function(name,object){
 
             }
         }// end of function
-
+*/
 /*Tabular Table Setup*/
 
 get_filter_field = function(entry_type, field_name, title){
@@ -147,9 +147,6 @@ get_qc_viewer = function(entry_type, field_name, title){
 
     var output = {data:field_name, title:title, render: function(val, type, doc){
 	        html = '<a href="/HREF"> VAL </a>'.replace("HREF",entry_type+"/"+val).replace("VAL", val)
-
-	        //'<a data-toggle="modal" data-target="#modal-fullscreen" class="viewQC '+entry_type+"+"+val+'">'+val+'</a>'
-	        //console.log(html)
 	        return Spacebars.SafeString(html)
         }}
 

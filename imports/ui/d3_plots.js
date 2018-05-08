@@ -141,7 +141,6 @@ do_d3_date_histogram = function (result, dom_id) {
     }); //Deps autorun
   }); //defer
   }// end of function
-
 d3barplot = function(window, data, formatCount, metric, entry_type){
         // fs_tables is the original table the stuff came from
         //console.log("data is", data)
@@ -162,7 +161,7 @@ d3barplot = function(window, data, formatCount, metric, entry_type){
           .attr("width", window.d3vis.width/20/2+"px")//(window.d3vis.x.range()[1] - window.d3vis.x.range()[0])/bins - 10)
           .attr("y", function(d) { return window.d3vis.y(d.count); })
           .attr("height", function(d) { return window.d3vis.height - window.d3vis.y(d.count); })
-          .attr("fill", "steelblue")
+          .attr("fill", "green")
           .attr("shape-rendering","crispEdges")
 
         //var clicked = false
@@ -190,12 +189,7 @@ d3barplot = function(window, data, formatCount, metric, entry_type){
         .attr("text-anchor", "middle")
         .attr("fill", "black")
         .attr("font-size", "10px")
-        .text(function(d) {
-          if (d._id < 1){
-            return d3.format(".2f")(d._id)
-          } else {
-            return d3.format(".1f")(d._id)
-          }
+        .text(function(d) {return d.label
          });
 
         var brush = d3.svg.brush()
@@ -251,32 +245,31 @@ d3barplot = function(window, data, formatCount, metric, entry_type){
                 var newkey = "metrics."+metric
 
 
+
                 var gSelector = Session.get("globalSelector")
                 if (Object.keys(gSelector).indexOf(entry_type) < 0 ){
                     gSelector[entry_type] = {}
                 }
-                gSelector[entry_type][newkey] = {$gte: extent0[0], $lte: extent0[1]}
-                Session.set("globalSelector", gSelector)
-                /*
-                var fs_and_subs = {}
-                fs_and_subs[entry_type] = gSelector[entry_type]
 
-                var subselect = Session.get("subjectSelector")
+                if(true){
+                  console.log("Before gSelector ", gSelector[entry_type][newkey])
+                  gSelector[entry_type][newkey] = {$gte: extent0[0], $lte: extent0[1]}
+                  console.log("After gSelector ", gSelector[entry_type][newkey])
 
-                if (subselect["subject_id"]["$in"].length){
-                    fs_and_subs["subject_id"] = subselect["subject_id"]
-                }*/
+                  Session.set("globalSelector", gSelector)
+               
 
-                var filter = get_filter(entry_type)
-                filter[newkey] = {$gte: extent0[0], $lte: extent0[1]}
 
-                Meteor.call("get_subject_ids_from_filter", filter, function(error, result){
-                    //console.log("result from get subject ids from filter is", result)
-                    var ss = Session.get("subjectSelector")
-                    ss["subject_id"]["$in"] = result
-                    Session.set("subjectSelector", ss)
-                })
-
+                  var filter = get_filter(entry_type)
+                  filter[newkey] = {$gte: extent0[0], $lte: extent0[1]}
+      
+                  Meteor.call("get_subject_ids_from_filter", filter, function(error, result){
+                      //console.log("result from get subject ids from filter is", result)
+                      var ss = Session.get("subjectSelector")
+                      ss["subject_id"]["$in"] = result
+                      Session.set("subjectSelector", ss)
+                  })
+                }
 
             }
 
@@ -295,6 +288,64 @@ clear_histogram = function(dom_id){
     .attr("fill", "#d9534f")
 
 }
+
+do_d3_barplot = function (values, metric, dom_id, entry_type) {
+    // Defer to make sure we manipulate DOM
+    _.defer(function () {
+        //console.log("HELLO, ATTEMPTING TO DO TABLE!!", fs_tables)
+      // Use this as a global variable
+      window.d3vis = {}
+      Deps.autorun(function () {
+        d3.select(dom_id).selectAll("rect").data([]).exit().remove()
+        d3.select(dom_id).selectAll("text").data([]).exit().remove()
+        // On first run, set up the visualiation
+        if (Deps.currentComputation.firstRun) {
+          window.d3vis.margin = {top: 15, right: 25, bottom: 15, left: 25},
+          window.d3vis.width = 900 - window.d3vis.margin.left - window.d3vis.margin.right,
+          window.d3vis.height = 125 - window.d3vis.margin.top - window.d3vis.margin.bottom;
+
+          window.d3vis.x = d3.scale.linear().range([0, window.d3vis.width]);
+
+          window.d3vis.y = d3.scale.linear().range([window.d3vis.height, 0]);
+
+          window.d3vis.color = d3.scale.category10();
+
+
+
+          window.d3vis.svg = d3.select(dom_id)
+              .attr("width", window.d3vis.width + window.d3vis.margin.left + window.d3vis.margin.right)
+              .attr("height", window.d3vis.height + window.d3vis.margin.top + window.d3vis.margin.bottom)
+              .append("g")
+              .attr("class", "wrapper")
+              .attr("transform", "translate(" + window.d3vis.margin.left + "," + window.d3vis.margin.top + ")");
+
+          window.d3vis.xAxis = d3.svg.axis()
+                                .scale(window.d3vis.x)
+                                .orient("bottom")
+
+          window.d3vis.svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + window.d3vis.height + ")")
+                //.call(window.d3vis.xAxis);
+           }
+
+
+        //var values = get_histogram(fs_tables, metric, bins)
+        window.d3vis.x.domain(values.map(function(d) { return d._id; }));
+
+        console.log("d3.max")
+        //console.log(values.map(function(d) { return d.label; }));
+
+        //window.d3vis.x.domain(values.map(function(d) { return d.t; }));
+        window.d3vis.y.domain([0, d3.max(values, function(d) { return d.count; })]);
+
+
+        var formatCount = d3.format(",.0f");
+        d3barplot(window, values, formatCount, metric, entry_type)
+
+    });
+  })
+  }
 
 do_d3_histogram = function (values, minval, maxval, metric, dom_id, entry_type) {
     // Defer to make sure we manipulate DOM
