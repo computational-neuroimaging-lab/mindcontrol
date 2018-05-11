@@ -13,68 +13,10 @@ Meteor.methods({
 
       },
 
-    getBarplotData: function(entry_type, metric, filter){
-          if(Meteor.isServer){
-            var no_null = filter
-            no_null["entry_type"] = entry_type
-            var metric_name = "metrics."+metric
-
-            if(Object.keys(no_null).indexOf(metric_name) >= 0){
-              no_null[metric_name]["$ne"] = null
-            }
-            else{
-              no_null[metric_name] = {$ne: null}
-            }
-
-            var distinct_metric_values = Subjects.distinct(metric_name)
-            console.log(distinct_metric_values)
-
-            //var foo = Subjects.aggregate([{$match: no_null}])
-            var num = 0
-            // var foo = Subjects.aggregate([
-            //   {$match: no_null},
-            //   {$project: 
-            //     {bin: "$metrics."+metric, num_id: num+=1}
-            //   },
-            //   //{"$label": 1},
-            //   {$group: {_id: {id: "$bin", label: "$bin"}, count: {$sum: 1}}}])
-            
-            var foo = Subjects.aggregate([
-              {$match: no_null},
-              {$project: 
-                {bin: "$metrics."+metric}
-              },
-              //{"$label": 1},
-              {$group: {_id: "$bin", count: {$sum: 1}}}])
-
-            var output = {}
-            output["barplot"] = _.sortBy(foo, "_id")
-            // if (minval < 0){
-            //         output["minval"] = minval*1.05
-            //       } else {
-            //         output["minval"] = minval*0.95
-            //       }
-
-            //       output["maxval"] = maxval*1.05
-            //       return output
-            console.log(foo)
-            //output["barplot"] = [{_id: 1, label: "Yes", count: 7}, {_id: 2, label: "No", count: 125}]
-            console.log(output)
-            for(var i=0; i<output["barplot"].length; i++){
-              output["barplot"][i]["label"] = output["barplot"][i]["_id"];
-              output["barplot"][i]["_id"] = i+1;
-            }
-            output["minval"] = output["barplot"][0]["_id"]*0.95
-            output["maxval"] = output["barplot"][output["barplot"].length-1]["_id"]*1.05
-            console.log(output["barplot"])
-            return output
-
-          }
-    },
-
-    getHistogramData: function(entry_type, metric, bins, filter){
+    getHistogramData: function(entry_type, metric, filter){
           //console.log("getting histogram data")
           if (Meteor.isServer){
+          
           var no_null = filter
           no_null["entry_type"] = entry_type
           var metric_name = "metrics."+metric
@@ -87,15 +29,16 @@ Meteor.methods({
           else{
               no_null[metric_name] = {$ne: null}
           }
-          //console.log("in the server, the filter is", no_null)
+          
 
-          var minval = Subjects.find(no_null, {sort: [[metric_name, "ascending"]], limit: 1}).fetch()[0]["metrics"][metric]
-          var maxval = Subjects.find(no_null, {sort: [[metric_name, "descending"]], limit: 1}).fetch()[0]["metrics"][metric]
-                    //var minval = Subjects.findOne({"entry_type": entry_type, no_null}, {sort: minsorter})//.sort(maxsorter).limit(1)
 
           var metric_datatype = typeof Subjects.find(no_null, {sort: [[metric_name, "descending"]], limit: 1}).fetch()[0]["metrics"][metric]
-          //console.log(Subjects.find(no_null, {sort: [[metric_name, "ascending"]], limit: 1}).fetch())
+          console.log("DATATYPE: " , metric_datatype)
           if(metric_datatype == "number"){
+
+            var minval = Subjects.find(no_null, {sort: [[metric_name, "ascending"]], limit: 1}).fetch()[0]["metrics"][metric]
+            var maxval = Subjects.find(no_null, {sort: [[metric_name, "descending"]], limit: 1}).fetch()[0]["metrics"][metric]
+            var bins = 20
             var bin_size = (maxval-minval)/(bins+1)
             console.log("the bin size is", bin_size)
 
@@ -105,7 +48,6 @@ Meteor.methods({
                           {$mod: ["$metrics."+metric, bin_size]}]}}},
                       {$group: {_id: "$lowerBound", count: {$sum: 1}}}])
                   var output = {}
-                  console.log(foo)
 
                   output["histogram"] = _.sortBy(foo, "_id")
                   if (minval < 0){
@@ -115,6 +57,8 @@ Meteor.methods({
                   }
 
                   output["maxval"] = maxval*1.05
+                  output["bins"] = bins
+                  console.log(output)
                   return output
             }
             else{
@@ -124,10 +68,34 @@ Meteor.methods({
                   output["maxval"] = 0
                   return output
             }
-          }
-          else if(metric_datatype == 'string'){
 
+        }
+        else if(metric_datatype == "string"){
+
+          var distinct_metric_values = Subjects.distinct(metric_name)
+          
+          var foo = Subjects.aggregate([
+            {$match: no_null},
+            {$project: 
+              {bin: "$metrics."+metric}
+            },
+            //{"$label": 1},
+            {$group: {_id: "$bin", count: {$sum: 1}}}])
+
+          var output = {}
+          output["histogram"] = _.sortBy(foo, "_id")
+
+          for(var i=0; i<output["histogram"].length; i++){
+            output["histogram"][i]["label"] = output["histogram"][i]["_id"];
+            output["histogram"][i]["_id"] = i+1;
           }
+
+          output["minval"] = output["histogram"][0]["_id"]*((distinct_metric_values.length-1)/distinct_metric_values.length)
+          output["maxval"] = output["histogram"][output["histogram"].length-1]["_id"]*((distinct_metric_values.length+1)/distinct_metric_values.length)
+          output["bins"] = distinct_metric_values.length
+          console.log(output)
+          return output
+        }
         }
       },
 
