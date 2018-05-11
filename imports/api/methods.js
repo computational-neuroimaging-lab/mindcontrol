@@ -14,14 +14,12 @@ Meteor.methods({
       },
 
     getHistogramData: function(entry_type, metric, filter){
-          //console.log("getting histogram data")
+          console.log("getting histogram data")
           if (Meteor.isServer){
           
           var no_null = filter
           no_null["entry_type"] = entry_type
           var metric_name = "metrics."+metric
-          //no_null["metrics"] = {}
-          //no_null["metrics"]["$ne"] = null
           
           if (Object.keys(no_null).indexOf(metric_name) >=0 ){
               no_null[metric_name]["$ne"] = null

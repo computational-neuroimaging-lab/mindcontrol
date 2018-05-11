@@ -263,30 +263,32 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
           
                 if(typeof text_selector.data()[0]["label"] == 'string'){
 
-                  var filter = get_filter(entry_type)
-                  selected_bar = ""
-                   for (var i = 0; i<text_selector.data().length; i++){
-                     if(Math.trunc(extent0[0]) == text_selector.data()[i]["_id"]){
-                      selected_bar = text_selector.data()[i]["label"]
-                    }
-                   }
-                  gSelector[entry_type][newkey] = {$in: [selected_bar]}
+                    var filter = get_filter(entry_type)
+                    selected_bars = []
 
-                  Session.set("globalSelector", gSelector)
+                    for (var i = 0; i<text_selector.data().length; i++){
+                       if(text_selector.data()[i]["_id"] >= Math.trunc(extent0[0]) && text_selector.data()[i]["_id"] < extent0[1]){
+                        selected_bars.push(text_selector.data()[i]["label"]) 
+                      }
+                     } 
 
-                  filter[newkey] = {$in: [selected_bar]}
-                  console.log("Filter: ", filter)
-                  console.log(selected_bar)
+                    gSelector[entry_type][newkey] = {$in: selected_bars}
+
+                    Session.set("globalSelector", gSelector)
+
+                    filter[newkey] = {$in: selected_bars}
+                    console.log("Filter: ", filter)
+                    console.log(selected_bars)
                 }
 
                 else {
 
-                  gSelector[entry_type][newkey] = {$gte: extent0[0], $lte: extent0[1]}
+                    gSelector[entry_type][newkey] = {$gte: extent0[0], $lte: extent0[1]}
 
-                  Session.set("globalSelector", gSelector)
+                    Session.set("globalSelector", gSelector)
 
-                  var filter = get_filter(entry_type)
-                  filter[newkey] = {$gte: extent0[0], $lte: extent0[1]}
+                    var filter = get_filter(entry_type)
+                    filter[newkey] = {$gte: extent0[0], $lte: extent0[1]}
                 }
                   
       
