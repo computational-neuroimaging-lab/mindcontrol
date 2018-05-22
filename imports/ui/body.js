@@ -259,11 +259,17 @@ Template.body_sidebar.helpers({
                     tmp = {}
                     var keyname = keys[i] + "+" + subkeys[j]
                     tmp["mapper"] = keyname
-                    tmp["name"] = subkeys[j]
+                    if(subkeys[j].split('- ')[0]){
+                        tmp["name"] = subkeys[j].split('- ')[0]
+                    }
+                    else
+                        tmp["name"] = subkeys[j].split('- ')[0]
+
                     outlist.push(tmp)
                 }
 
             }
+            //console.log("OUTLIST", outlist)
             return outlist
         }
 

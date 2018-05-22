@@ -1,4 +1,7 @@
-import {Subjects} from "../api/module_tables.js"
+import { Subjects } from "../api/module_tables.js"
+import { Session } from 'meteor/session'
+
+
 
 if (Meteor.isServer) {
   // This code only runs on the server
@@ -6,30 +9,41 @@ if (Meteor.isServer) {
 
 
  Meteor.startup(function () {
-    //Subjects.remove({})
-    //console.log("in metero startup function")
+
     if (Subjects.find().count() === 0) {
-        //load the json from here: https://www.dropbox.com/s/enb5zemvmu2oqgw/data.json?dl=0
-        //console.log(JSON.parse(HTTP.get("http:///private/generator.json").content))
-        source_json = Meteor.settings.public.startup_json //JSON.parse(Assets.getText("generator.json"));
-        //console.log(HTTP.get(source_json).content)
-  
 
-        //myobject = JSON.parse(Storage.readSync(source_json))
+      //local json upload
+      var fs=require('fs');
+      var file='/Users/md35727/mindcontrol_kesh/data.json'
+      var data=fs.readFileSync(file, 'utf8');
+      var myobject=JSON.parse(data);
 
-        myobject = JSON.parse(HTTP.get(source_json).content)
-
-
-
-        console.log("my object is", myobject.length)
-        if (Meteor.settings.public.load_if_empty){
-          console.log("loading???")
-          myobject.forEach(function(val,idx,array){
+      myobject.forEach(function(val,idx,array){
               console.log(val.subject_id)
               Subjects.insert(val)
           })
-        }
+      // var bodyparser=require('body-parser');
+      // console.log(words);
+
+
+
+      //url json upload
+        // source_json = Meteor.settings.public.startup_json 
+
+        // myobject = JSON.parse(HTTP.get(source_json).content)
+
+        // console.log("my object is", myobject.length)
+        // if (Meteor.settings.public.load_if_empty){
+        //   console.log("loading???")
+        //   myobject.forEach(function(val,idx,array){
+        //       console.log(val.subject_id)
+        //       Subjects.insert(val)
+        //   })
+        // }
+
+        
     }
+        
   });
 
 }

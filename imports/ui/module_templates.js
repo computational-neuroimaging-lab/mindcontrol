@@ -43,7 +43,28 @@ get_metrics = function(entry_type){
     Meteor.call("get_metric_names", entry_type, function(error, result){
             Session.set(entry_type+"_metrics", result)
         })
+        // var metrics = Session.get(entry_type+"_metrics")
+        // var metric_labels = []
+        // for(var i=0; i<metrics.length-1; i++){
+        //     metric_labels.push(metrics[i]+"- QL")
+        // }
+        // return metric_labels
         return Session.get(entry_type+"_metrics")
+}
+
+get_metrics_labels = function(entry_type){
+    Meteor.call("get_metric_labels", entry_type, function(error, result){
+            Session.set(entry_type+"_metrics", result)
+        })
+        var metrics = Session.get(entry_type+"_metrics")
+        
+        
+        var metric_labels = []
+        for(var i=0; i<metrics.length; i++){
+            metric_labels.push(metrics[i])
+        }
+        return metric_labels
+        //return Session.get(entry_type+"_metrics")
 }
 
 render_histogram = function(entry_type){
@@ -101,18 +122,18 @@ Template.module.helpers({
     return this.graph_type == "datehist"
   },
   metric: function(){
-          return get_metrics(this.entry_type)
+          return get_metrics_labels(this.entry_type)
       },
   currentMetric: function(){
-          return Session.get("current_"+this.entry_type)
+          return Session.get("current_"+this.entry_type.split('- ')[0])
       }
 })
 
 Template.module.events({
  "change #metric-select": function(event, template){
      var metric = $(event.currentTarget).val()
-     console.log("metric: ", metric)
-     Session.set("current_"+this.entry_type, metric)
+     console.log("metric: ", metric.split('- ')[0])
+     Session.set("current_"+this.entry_type, metric.split('- ')[0])
  },
  "click .clouder": function(event, template){
    var cmd = Meteor.settings.public.clouder_cmd

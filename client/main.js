@@ -9,6 +9,5 @@ subjectSelector = {"subject_id": {"$in": []}}
 
           Session.set("globalSelector", globalSelector)
           Session.set("subjectSelector", subjectSelector)
-
       
     });

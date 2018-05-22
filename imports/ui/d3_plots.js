@@ -141,6 +141,8 @@ do_d3_date_histogram = function (result, dom_id) {
     }); //Deps autorun
   }); //defer
   }// end of function
+
+//do_timeseries = function()
 d3barplot = function(window, data, bins, formatCount, metric, entry_type){
         // fs_tables is the original table the stuff came from
         //console.log("data is", data)
@@ -187,6 +189,7 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
             return window.d3vis.x(d._id) + width/2;
         })
         .attr("text-anchor", "middle")
+        //.attr("transform", "rotate(-5)")
         .attr("fill", "black")
         .attr("font-size", "10px")
         .text(function(d) {
@@ -249,19 +252,40 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
         function brushend(){
             var extent0 = brush.extent()
 
-            if (extent0[1] - extent0[0]){
+            if ((extent0[1] - extent0[0]) >= 0){
 
                 d3.selectAll(".brush").call(brush.clear());
                 var newkey = "metrics."+metric
-
-
 
                 var gSelector = Session.get("globalSelector")
                 if (Object.keys(gSelector).indexOf(entry_type) < 0 ){
                     gSelector[entry_type] = {}
                 }
-          
-                if(typeof text_selector.data()[0]["label"] == 'string'){
+
+                //graphing hour of day
+                if(Number(text_selector.data()[0]["label"]) == text_selector.data()[0]["_id"]){
+
+                    var filter = get_filter(entry_type)
+                    selected_bars = ""
+
+                    for (var i = 0; i<text_selector.data().length; i++){
+                       if(text_selector.data()[i]["_id"] >= Math.trunc(extent0[0]) && text_selector.data()[i]["_id"] < extent0[1]){
+                        selected_bars = selected_bars+"1970-01-01T"+text_selector.data()[i]["label"]+"|"                        
+                      }
+                     } 
+                    selected_bars = selected_bars.substring(0, selected_bars.length-1)
+                    
+                    gSelector[entry_type][newkey] = {$regex: selected_bars}
+
+                    Session.set("globalSelector", gSelector)
+                    console.log("globalSelector: ", gSelector)
+
+                    filter[newkey] = {$regex: selected_bars}
+                    //console.log("Filter: ", filter)
+                }
+                
+                //graphing strings
+                else if(typeof text_selector.data()[0]["label"] == 'string' && (text_selector.data()[0]["label"]).length != 2){
 
                     var filter = get_filter(entry_type)
                     selected_bars = []
@@ -275,12 +299,13 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
                     gSelector[entry_type][newkey] = {$in: selected_bars}
 
                     Session.set("globalSelector", gSelector)
+                    console.log("globalSelector: ", gSelector)
 
                     filter[newkey] = {$in: selected_bars}
-                    console.log("Filter: ", filter)
-                    console.log(selected_bars)
+                    //console.log("Filter: ", filter)
                 }
 
+                //graphing number
                 else {
 
                     gSelector[entry_type][newkey] = {$gte: extent0[0], $lte: extent0[1]}
@@ -296,7 +321,7 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
                     //console.log("result from get subject ids from filter is", result)
                     var ss = Session.get("subjectSelector")
                     ss["subject_id"]["$in"] = result
-                    console.log(result)
+                    //console.log(result)
                     Session.set("subjectSelector", ss)
                 })
                 

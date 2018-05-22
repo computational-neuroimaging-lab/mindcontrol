@@ -1,6 +1,7 @@
 {
   "public": {
-    "startup_json":"http://www.json-generator.com/api/json/get/cqvPacnqdK?indent=2",
+    "startup_json":"http://www.json-generator.com/api/json/get/bUKySRRVnS?indent=2",
+    "metric_labels":"http://www.json-generator.com/api/json/get/bTwzelTuBe?indent=2",
     "load_if_empty": true,
     "use_custom": true,
     "needs_consent": false,
@@ -167,6 +168,53 @@
           }
         ],
         "metric_names": ["AGE_01","AGE_02","AGE_03","AGE_04"],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+      },
+      {
+        "name": "ATQ",
+        "entry_type": "ATQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          },
+          {
+            "function_name": "get_qc_ave_field",
+            "id": "average_vote",
+            "name": "QC vote"
+          },
+          {
+            "function_name": null,
+            "id": "num_votes",
+            "name": "# votes"
+          },
+          {
+            "function_name": null,
+            "id": "quality_check.notes_QC",
+            "name": "Notes"
+          }
+        ],
+        "metric_names": ["ATQ_01", "ATQ_02", "ATQ_03", "ATQ_04",
+       "ATQ_05", "ATQ_06", "ATQ_07", "ATQ_08", "ATQ_9", "ATQ_10", "ATQ_11",
+       "ATQ_12", "ATQ_13", "ATQ_14", "ATQ_15", "ATQ_16", "ATQ_17", "ATQ_18",
+       "ATQ_19", "ATQ_20", "ATQ_21", "ATQ_22", "ATQ_23", "ATQ_24", "ATQ_25",
+       "ATQ_26", "ATQ_27", "ATQ_28", "ATQ_29", "ATQ_30", "ATQ_31", "ATQ_32",
+       "ATQ_33", "ATQ_34", "ATQ_35", "ATQ_36", "ATQ_37", "ATQ_38", "ATQ_39",
+       "ATQ_40", "ATQ_41", "ATQ_42", "ATQ_43", "ATQ_44", "ATQ_45", "ATQ_46",
+       "ATQ_47", "ATQ_48", "ATQ_49", "ATQ_50", "ATQ_51", "ATQ_52", "ATQ_53",
+       "ATQ_54", "ATQ_55", "ATQ_56", "ATQ_57", "ATQ_58", "ATQ_59", "ATQ_60",
+       "ATQ_61", "ATQ_62", "ATQ_63", "ATQ_64", "ATQ_65", "ATQ_66", "ATQ_67",
+       "ATQ_68", "ATQ_69", "ATQ_70", "ATQ_71", "ATQ_72", "ATQ_73", "ATQ_74",
+       "ATQ_75", "ATQ_76", "ATQ_77", "ATQ_78", "ATQ_79", "ATQ_80", "ATQ_81",
+       "ATQ_82", "ATQ_83", "ATQ_84", "ATQ_85", "ATQ_86", "ATQ_87", "ATQ_88",
+       "ATQ_89", "ATQ_90", "ATQ_91", "ATQ_92", "ATQ_93", "ATQ_94"],
         "graph_type": "histogram",
         "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
         "usePeerJS": false,
