@@ -133,11 +133,6 @@ do_d3_date_histogram = function (result, dom_id) {
                   + "H" + (w0 + 1) * cellSize + "Z";
                 }
 
-
-
-
-
-
     }); //Deps autorun
   }); //defer
   }// end of function
@@ -151,23 +146,16 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
         var text_selector = window.d3vis.svg.selectAll(".bar_text")
           .data(data)
 
-  
         bar_selector
           .enter().append("rect")
           .attr("class", "bar")
         bar_selector
-          //.transition()
-          //.duration(100)
           .attr("x", function(d) { return window.d3vis.x(d._id);})
-          //.attr("width", window.d3vis.x(data[0].dx) - 1)
-          .attr("width", window.d3vis.width/(bins)/2+"px")//(window.d3vis.x.range()[1] - window.d3vis.x.range()[0])/bins - 10)
+          .attr("width", window.d3vis.width/(bins)/2+"px")
           .attr("y", function(d) { return window.d3vis.y(d.count); })
           .attr("height", function(d) { return window.d3vis.height - window.d3vis.y(d.count); })
           .attr("fill", "green")
           .attr("shape-rendering","crispEdges")
-
-        //var clicked = false
-
 
 
         bar_selector.enter().append("text")
@@ -188,8 +176,8 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
             var width = window.d3vis.width/(bins)/2
             return window.d3vis.x(d._id) + width/2;
         })
+        //.attr("transform", "translate(20, 20) rotate(-5)")
         .attr("text-anchor", "middle")
-        //.attr("transform", "rotate(-5)")
         .attr("fill", "black")
         .attr("font-size", "10px")
         .text(function(d) {
@@ -204,7 +192,7 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
             }
           }
          });
-
+        
         var brush = d3.svg.brush()
             .x(window.d3vis.x)
             .extent([_.min(data), _.max(data)])
@@ -215,6 +203,13 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
             .attr("class", "brush")
             .call(brush);
 
+        var button = d3.select("body")
+            .append("div")
+            .attr("class", "and_button")
+            .selectAll("div")
+            .data(data)
+            .text(function(d){return d;});
+
         gBrush.selectAll("rect")
             .attr("height", window.d3vis.height)
             .on("click", function(d){
@@ -224,29 +219,15 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
 
         function brushed() {
           var extent0 = brush.extent()
-              //extent1;
-
-          //console.log(d3.event.mode)
-
-
-
-          // if dragging, preserve the width of the extent
+                      
           if (d3.event.mode === "move") {
                   //console.log("moving")
-          }
-
-          // otherwise, if resizing, round both dates
+          }        
           else {
-            extent1 = extent0//.map(d3.time.day.round);
-            //console.log("extending")
-            // if empty when rounded, use floor & ceil instead
-            /*if (extent1[0] >= extent1[1]) {
-              extent1[0] = d3.time.day.floor(extent0[0]);
-              extent1[1] = d3.time.day.ceil(extent0[1]);
-            }*/
+            extent1 = extent0
+            
           }
-
-          //d3.select(this).call(brush.extent(extent1));
+     
         }
 
         function brushend(){
@@ -256,16 +237,33 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
 
                 d3.selectAll(".brush").call(brush.clear());
                 var newkey = "metrics."+metric
+                var filter = {}
 
                 var gSelector = Session.get("globalSelector")
+                
+
                 if (Object.keys(gSelector).indexOf(entry_type) < 0 ){
                     gSelector[entry_type] = {}
                 }
 
-                //graphing hour of day
-                if(Number(text_selector.data()[0]["label"]) == text_selector.data()[0]["_id"]){
+                //graphing month of year (1-12)
+                if(bins == 12 && Number(text_selector.data()[0]["label"]) == text_selector.data()[0]["_id"]){                   
+                    selected_bars = ""
 
-                    var filter = get_filter(entry_type)
+                    for (var i = 0; i<text_selector.data().length; i++){
+                       if(text_selector.data()[i]["_id"] >= Math.trunc(extent0[0]) && text_selector.data()[i]["_id"] < extent0[1]){
+                        selected_bars = selected_bars+"-"+text_selector.data()[i]["label"]+"-|"                        
+                      }
+                     } 
+                    selected_bars = selected_bars.substring(0, selected_bars.length-1)
+                    
+                    gSelector[entry_type][newkey] = {$regex: selected_bars}
+
+                    filter[newkey] = {$regex: selected_bars}
+                }
+
+                //graphing hour of day (00-23)
+                else if(Number(text_selector.data()[0]["label"]) == text_selector.data()[0]["_id"]){                   
                     selected_bars = ""
 
                     for (var i = 0; i<text_selector.data().length; i++){
@@ -277,17 +275,13 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
                     
                     gSelector[entry_type][newkey] = {$regex: selected_bars}
 
-                    Session.set("globalSelector", gSelector)
-                    console.log("globalSelector: ", gSelector)
-
                     filter[newkey] = {$regex: selected_bars}
-                    //console.log("Filter: ", filter)
                 }
                 
                 //graphing strings
-                else if(typeof text_selector.data()[0]["label"] == 'string' && (text_selector.data()[0]["label"]).length != 2){
+                else if(typeof text_selector.data()[0]["label"] == 'string' && (text_selector.data()[0]["label"]).length){
 
-                    var filter = get_filter(entry_type)
+                   
                     selected_bars = []
 
                     for (var i = 0; i<text_selector.data().length; i++){
@@ -298,11 +292,10 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
 
                     gSelector[entry_type][newkey] = {$in: selected_bars}
 
-                    Session.set("globalSelector", gSelector)
-                    console.log("globalSelector: ", gSelector)
-
-                    filter[newkey] = {$in: selected_bars}
-                    //console.log("Filter: ", filter)
+                    if(selected_bars.length > 1)
+                      filter[newkey] = {$in: selected_bars}
+                    else
+                      filter[newkey] = selected_bars[0]                   
                 }
 
                 //graphing number
@@ -310,28 +303,49 @@ d3barplot = function(window, data, bins, formatCount, metric, entry_type){
 
                     gSelector[entry_type][newkey] = {$gte: extent0[0], $lte: extent0[1]}
 
-                    Session.set("globalSelector", gSelector)
-
-                    var filter = get_filter(entry_type)
                     filter[newkey] = {$gte: extent0[0], $lte: extent0[1]}
                 }
-                  
-      
-                Meteor.call("get_subject_ids_from_filter", filter, function(error, result){
-                    //console.log("result from get subject ids from filter is", result)
-                    var ss = Session.get("subjectSelector")
-                    ss["subject_id"]["$in"] = result
-                    //console.log(result)
-                    Session.set("subjectSelector", ss)
-                })
-                
 
+              //AND OR query
+              product_of_sums = Session.get("product_of_sums")
+              sums = Session.get("sums")
+              
+              if (Session.get("query_mode") == "OR"){
+                sums.push(filter)
+                console.log("OR filter", sums)
+                Session.set("sums", sums)
+              }
+              else if(product_of_sums.length == 0 && Session.get("query_mode") == "AND"){
+                filter_array = []
+                filter_array.push(filter)
+                product_of_sums.push(filter_array)
+                Session.set("product_of_sums", product_of_sums)
+
+                Meteor.call("get_subject_ids_from_aggregate", product_of_sums, function(error, result){
+                  var ss = Session.get("subjectSelector")
+                  
+                  ss["subject_id"]["$in"] = result
+
+                  Session.set("subjectSelector", ss)
+                  //console.log(result)
+                  console.log("subjectSelector", ss)
+                  
+                })
+                Session.set("query_mode", "OR")
+              }
+              else if(Session.get("query_mode") == "AND"){
+
+
+                sums.push(filter)
+                Session.set("query_mode", "OR")
+                Session.set("sums", sums)
+              }
+       
+            console.log("Filter: ", filter)
             }
 
             console.log("ended brushing", extent0)
         }
-
-
 
 
       };
@@ -355,7 +369,7 @@ do_d3_histogram = function (values, bins, minval, maxval, metric, dom_id, entry_
         d3.select(dom_id).selectAll("text").data([]).exit().remove()
         // On first run, set up the visualiation
         if (Deps.currentComputation.firstRun) {
-          window.d3vis.margin = {top: 15, right: 25, bottom: 15, left: 25},
+          window.d3vis.margin = {top: 15, right: 25, bottom: 15, left: 30},
           window.d3vis.width = 900 - window.d3vis.margin.left - window.d3vis.margin.right,
           window.d3vis.height = 125 - window.d3vis.margin.top - window.d3vis.margin.bottom;
 

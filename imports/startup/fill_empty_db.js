@@ -9,38 +9,40 @@ if (Meteor.isServer) {
 
 
  Meteor.startup(function () {
+  //add email address for outgoing emails
+  process.env.MAIL_URL = 'smtps://--email--:--password--@smtp.gmail.com:465/'
 
     if (Subjects.find().count() === 0) {
 
       //local json upload
-      var fs=require('fs');
-      var file='/Users/md35727/mindcontrol_kesh/data.json'
-      var data=fs.readFileSync(file, 'utf8');
-      var myobject=JSON.parse(data);
+      // if (!Meteor.settings.public.use_url_data){
+      //   var fs=require('fs');
+        //var file='/Users/md35727/mindcontrol_kesh/data.json'
+        // var file = '/Users/md35727/spyder_workspace/ACDS.json'
+        // var data=fs.readFileSync(file, 'utf8');
+        // var myobject=JSON.parse(data);
+  
+        // myobject.forEach(function(val,idx,array){
+        //         console.log(val.subject_id)
+        //         Subjects.insert(val)
+        //     })
+        // }
 
-      myobject.forEach(function(val,idx,array){
+      //url json upload
+      if(Meteor.settings.public.use_url_data){
+        source_json = Meteor.settings.public.startup_json 
+
+        myobject = JSON.parse(HTTP.get(source_json).content)
+
+        console.log("my object is", myobject.length)
+        if (Meteor.settings.public.load_if_empty){
+          console.log("loading???")
+          myobject.forEach(function(val,idx,array){
               console.log(val.subject_id)
               Subjects.insert(val)
           })
-      // var bodyparser=require('body-parser');
-      // console.log(words);
-
-
-
-      //url json upload
-        // source_json = Meteor.settings.public.startup_json 
-
-        // myobject = JSON.parse(HTTP.get(source_json).content)
-
-        // console.log("my object is", myobject.length)
-        // if (Meteor.settings.public.load_if_empty){
-        //   console.log("loading???")
-        //   myobject.forEach(function(val,idx,array){
-        //       console.log(val.subject_id)
-        //       Subjects.insert(val)
-        //   })
-        // }
-
+        }
+      } 
         
     }
         

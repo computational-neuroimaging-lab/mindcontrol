@@ -12,14 +12,14 @@ curl https://install.meteor.com/ | sh
 Clone this repository
 
 ```
-git clone https://github.com/akeshavan/mindcontrol
+git clone https://github.com/manwithadodla/mindcontrol_md/mindcontrol_kesh
 ```
 
 start the server
 
 ```
 cd mindcontrol
-meteor --settings settings.dev.json
+meteor --settings test_settings.json
 ```
 
 In a browser navigate to localhost:3000

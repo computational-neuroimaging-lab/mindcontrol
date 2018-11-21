@@ -1,228 +1,2352 @@
 {
   "public": {
-    "startup_json":"http://www.json-generator.com/api/json/get/bUKySRRVnS?indent=2",
-    "metric_labels":"http://www.json-generator.com/api/json/get/bTwzelTuBe?indent=2",
+    "startup_json": "http://www.json-generator.com/api/json/get/bUKySRRVnS?indent=2",
+    "metric_labels": "http://www.json-generator.com/api/json/get/bTOqDILDAO?indent=2",
+    "use_url_data": false,
     "load_if_empty": true,
     "use_custom": true,
     "needs_consent": false,
     "modules": [
       {
-        "name": "ACDS",
+        "name": "Adult ADHD Clinical Diagnostic Scale",
         "entry_type": "ACDS",
         "fields": [
           {
             "function_name": "get_qc_viewer",
             "id": "name",
             "name": "Subject"
-          },
-          {
-            "function_name": "get_qc_ave_field",
-            "id": "average_vote",
-            "name": "QC vote"
-          },
-          {
-            "function_name": null,
-            "id": "num_votes",
-            "name": "# votes"
-          },
-          {
-            "function_name": null,
-            "id": "quality_check.notes_QC",
-            "name": "Notes"
           }
         ],
-        "metric_names": ["ACDS_01","ACDS_02","ACDS_03","ACDS_04","ACDS_05","ACDS_06","ACDS_07","ACDS_08","ACDS_09","ACDS_10","ACDS_11","ACDS_12","ACDS_13","ACDS_14","ACDS_15","ACDS_16","ACDS_17","ACDS_18","ACDS_19","ACDS_20","ACDS_21","ACDS_22","ACDS_23","ACDS_24","ACDS_25","ACDS_26","ACDS_27","ACDS_28","ACDS_29","ACDS_30","ACDS_31","ACDS_32","ACDS_33","ACDS_34","ACDS_35","ACDS_36","ACDS_37","ACDS_38","ACDS_39","ACDS_40","ACDS_41","ACDS_42"],
         "graph_type": "histogram",
         "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
         "usePeerJS": false,
         "logPainter": false,
         "logContours": false,
         "logPoints": true,
-        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+        "qc_options": {}
       },
       {
-        "name": "AIM",
-        "entry_type": "AIM",
-        "fields": [
-          {
-            "function_name": "get_qc_viewer",
-            "id": "name",
-            "name": "Subject"
-          },
-          {
-            "function_name": "get_qc_ave_field",
-            "id": "average_vote",
-            "name": "QC vote"
-          },
-          {
-            "function_name": null,
-            "id": "num_votes",
-            "name": "# votes"
-          },
-          {
-            "function_name": null,
-            "id": "quality_check.notes_QC",
-            "name": "Notes"
-          }
-        ],
-        "metric_names": ["CCDAIM_01","CCDAIM_02","CCDAIM_03","CCDAIM_04","CCDAIM_05","CCDAIM_06","CCDAIM_07","CCDAIM_08","CCDAIM_09","CCDAIM_10","CCDAIM_11","CCDAIM_12","CCDAIM_13","CCDAIM_14","CCDAIM_15","CCDAIM_16","CCDAIM_17","CCDAIM_18","CCDAIM_19","CCDAIM_20","CCDAIM_21","CCDAIM_22","CCDAIM_23","CCDAIM_24","CCDAIM_25","CCDAIM_26","CCDAIM_27","CCDAIM_28","CCDAIM_29","CCDAIM_30","CCDAIM_31","CCDAIM_32","CCDAIM_33","CCDAIM_34","CCDAIM_35","CCDAIM_36","CCDAIM_37","CCDAIM_38","CCDAIM_39","CCDAIM_40","CCDAIM_41","CCDAIM_42","CCDAIM_43","CCDAIM_44","CCDAIM_45"],
-        "graph_type": "histogram",
-        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
-        "usePeerJS": false,
-        "logPainter": false,
-        "logContours": false,
-        "logPoints": true,
-        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
-      },
-      {
-        "name": "ACTIGRAPH",
+        "name": "Actigraphy",
         "entry_type": "Actigraphy",
         "fields": [
           {
             "function_name": "get_qc_viewer",
             "id": "name",
             "name": "Subject"
-          },
-          {
-            "function_name": "get_qc_ave_field",
-            "id": "average_vote",
-            "name": "QC vote"
-          },
-          {
-            "function_name": null,
-            "id": "num_votes",
-            "name": "# votes"
-          },
-          {
-            "function_name": null,
-            "id": "quality_check.notes_QC",
-            "name": "Notes"
           }
         ],
-        "metric_names": ["ACTIGRAPH_01","ACTIGRAPH_02","ACTIGRAPH_03","ACTIGRAPH_04","ACTIGRAPH_05","ACTIGRAPH_06","ACTIGRAPH_07","ACTIGRAPH_08","ACTIGRAPH_09","ACTIGRAPH_10","ACTIGRAPH_11","ACTIGRAPH_12","ACTIGRAPH_13","ACTIGRAPH_14","ACTIGRAPH_15","ACTIGRAPH_16","ACTIGRAPH_17","ACTIGRAPH_18","ACTIGRAPH_19","ACTIGRAPH_20","ACTIGRAPH_21","ACTIGRAPH_22","ACTIGRAPH_23","ACTIGRAPH_24"],
         "graph_type": "histogram",
         "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
         "usePeerJS": false,
         "logPainter": false,
         "logContours": false,
         "logPoints": true,
-        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+        "qc_options": {}
       },
       {
-        "name": "ANT",
-        "entry_type": "ANT",
-        "fields": [
-          {
-            "function_name": "get_qc_viewer",
-            "id": "name",
-            "name": "Subject"
-          },
-          {
-            "function_name": "get_qc_ave_field",
-            "id": "average_vote",
-            "name": "QC vote"
-          },
-          {
-            "function_name": null,
-            "id": "num_votes",
-            "name": "# votes"
-          },
-          {
-            "function_name": null,
-            "id": "quality_check.notes_QC",
-            "name": "Notes"
-          }
-        ],
-        "metric_names": ["ANT_01","ANT_02","ANT_03","ANT_04","ANT_05","ANT_06"],
-        "graph_type": "histogram",
-        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
-        "usePeerJS": false,
-        "logPainter": false,
-        "logContours": false,
-        "logPoints": true,
-        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
-      },
-      {
-        "name": "AGE",
+        "name": "Age",
         "entry_type": "Age",
         "fields": [
           {
             "function_name": "get_qc_viewer",
             "id": "name",
             "name": "Subject"
-          },
-          {
-            "function_name": "get_qc_ave_field",
-            "id": "average_vote",
-            "name": "QC vote"
-          },
-          {
-            "function_name": null,
-            "id": "num_votes",
-            "name": "# votes"
-          },
-          {
-            "function_name": null,
-            "id": "quality_check.notes_QC",
-            "name": "Notes"
           }
         ],
-        "metric_names": ["AGE_01","AGE_02","AGE_03","AGE_04"],
         "graph_type": "histogram",
         "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
         "usePeerJS": false,
         "logPainter": false,
         "logContours": false,
         "logPoints": true,
-        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+        "qc_options": {}
       },
       {
-        "name": "ATQ",
+        "name": "Attention Network Test",
+        "entry_type": "ANT",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "ASR-Adaptive Functioning Scales",
+        "entry_type": "ASR-Adaptive_Functioning_Scales",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Adult Self Report (Ages 18-59)",
+        "entry_type": "ASR",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Adult Temperament Questionnaire (Ages 16+)",
         "entry_type": "ATQ",
         "fields": [
           {
             "function_name": "get_qc_viewer",
             "id": "name",
             "name": "Subject"
-          },
-          {
-            "function_name": "get_qc_ave_field",
-            "id": "average_vote",
-            "name": "QC vote"
-          },
-          {
-            "function_name": null,
-            "id": "num_votes",
-            "name": "# votes"
-          },
-          {
-            "function_name": null,
-            "id": "quality_check.notes_QC",
-            "name": "Notes"
           }
         ],
-        "metric_names": ["ATQ_01", "ATQ_02", "ATQ_03", "ATQ_04",
-       "ATQ_05", "ATQ_06", "ATQ_07", "ATQ_08", "ATQ_9", "ATQ_10", "ATQ_11",
-       "ATQ_12", "ATQ_13", "ATQ_14", "ATQ_15", "ATQ_16", "ATQ_17", "ATQ_18",
-       "ATQ_19", "ATQ_20", "ATQ_21", "ATQ_22", "ATQ_23", "ATQ_24", "ATQ_25",
-       "ATQ_26", "ATQ_27", "ATQ_28", "ATQ_29", "ATQ_30", "ATQ_31", "ATQ_32",
-       "ATQ_33", "ATQ_34", "ATQ_35", "ATQ_36", "ATQ_37", "ATQ_38", "ATQ_39",
-       "ATQ_40", "ATQ_41", "ATQ_42", "ATQ_43", "ATQ_44", "ATQ_45", "ATQ_46",
-       "ATQ_47", "ATQ_48", "ATQ_49", "ATQ_50", "ATQ_51", "ATQ_52", "ATQ_53",
-       "ATQ_54", "ATQ_55", "ATQ_56", "ATQ_57", "ATQ_58", "ATQ_59", "ATQ_60",
-       "ATQ_61", "ATQ_62", "ATQ_63", "ATQ_64", "ATQ_65", "ATQ_66", "ATQ_67",
-       "ATQ_68", "ATQ_69", "ATQ_70", "ATQ_71", "ATQ_72", "ATQ_73", "ATQ_74",
-       "ATQ_75", "ATQ_76", "ATQ_77", "ATQ_78", "ATQ_79", "ATQ_80", "ATQ_81",
-       "ATQ_82", "ATQ_83", "ATQ_84", "ATQ_85", "ATQ_86", "ATQ_87", "ATQ_88",
-       "ATQ_89", "ATQ_90", "ATQ_91", "ATQ_92", "ATQ_93", "ATQ_94"],
         "graph_type": "histogram",
         "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
         "usePeerJS": false,
         "logPainter": false,
         "logContours": false,
         "logPoints": true,
-        "qc_options": {"pass": 1, "fail": 1, "needs_edits": 0, "edited": 0, "assignTo": 0, "notes": 1, "confidence": 1}
+        "qc_options": {}
+      },
+      {
+        "name": "Affect Intensity Measure",
+        "entry_type": "AIM",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "High-Functioning Autism Spectrum Screening Questionnaire",
+        "entry_type": "ASSQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Behavior Assessment System for Children, 2nd Edition - Parent Rating Scale (6-11)",
+        "entry_type": "BASC-2_-Ages_6-11-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Behavior Assessment System for Children, 2nd Edition - Parent Rating Scale (12-17)",
+        "entry_type": "BASC-2_12-17",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Behavior Assessment System for Children, 2nd Edition - Parent Rating Scale (12-17)",
+        "entry_type": "BASC_Scores_-PRS-A_Ages_12-17-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Behavior Assessment System for Children, 2nd Edition - Parent Rating Scale (6-11)",
+        "entry_type": "BASC_Scores_-PRS-C_ages_6-11-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Beck Depression Inventory (Ages 18-64)",
+        "entry_type": "BDI-II",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Bike Test",
+        "entry_type": "Bike_Test",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Behavioral Indicator of Resiliency to Distress",
+        "entry_type": "Bird",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "BISQ",
+        "entry_type": "BISQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Blood Collection",
+        "entry_type": "Blood_collection",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Conners Adult ADHD Rating Scale - Self Report, Short Version",
+        "entry_type": "CAARS-S_S",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Comprehensive Addiction Severity Index for Adolescents (Ages 11+)",
+        "entry_type": "CASI-A",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "CBCL-AF",
+        "entry_type": "CBCL-AF",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Child Behavior Checklist - Parent Report Form",
+        "entry_type": "CBCL",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Children's Behavior Questionnaire",
+        "entry_type": "CBQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Children's Depression Inventory 2 (Ages 7-17)",
+        "entry_type": "CDI_2_SR",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Children's Eating Behavior Questionnaire (Ages 6-11)",
+        "entry_type": "CEBQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Cognitive Failure Questionnaire (Ages 6+)",
+        "entry_type": "CFQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Cambridge-Hopkins Restless Legs Syndrome (Ages 13+)",
+        "entry_type": "CHRLS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Color Blindness Test",
+        "entry_type": "Color_Blindness_Test",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Conners_3-P-S-",
+        "entry_type": "Conners_3-P-S-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Conners_3-SR-S-",
+        "entry_type": "Conners_3-SR-S-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Consensus Diagnostic Summary 4-15-13",
+        "entry_type": "Consensus_Diagnostic_Summary_-4_15_13-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Demos-supplement 2-12-13",
+        "entry_type": "Demos-supplement_-2_12_13-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Demographic Questionnaire",
+        "entry_type": "Demos",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Diagnostic Summary",
+        "entry_type": "Diagnostic_Summary",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Digit Span",
+        "entry_type": "DSpan",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS_20_Questions",
+        "entry_type": "DKEFS_20_Questions",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "QUEST_ADD",
+        "entry_type": "QUEST_ADD",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS Color_Word_Interference",
+        "entry_type": "DKEFS_Color_Word_Interference",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS Design_Fluency",
+        "entry_type": "DKEFS_Design_Fluency",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS_PROVERBS",
+        "entry_type": "DKEFS_PROVERBS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS_Sorting",
+        "entry_type": "DKEFS_Sorting",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS_TOWER",
+        "entry_type": "DKEFS_TOWER",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS_Trails",
+        "entry_type": "DKEFS_Trails",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS_Verbal_Fluency",
+        "entry_type": "DKEFS_Verbal_Fluency",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "DKEFS_Word_Context",
+        "entry_type": "DKEFS_Word_Context",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Domain-Specific Risk-Taking Scale (Ages 18+)",
+        "entry_type": "DOSPERT",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Dot Probe",
+        "entry_type": "Dot_Probe",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Early Adolescent Temperament Questionnaire (Revised) Parent Report (Ages 9-15)",
+        "entry_type": "EATQ-R",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Eating Disorder Examination Questionnaire (Ages 13+)",
+        "entry_type": "EDEQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Edinburgh Handedness Questionnaire",
+        "entry_type": "EHQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Emotional Regulation Questionnaire",
+        "entry_type": "ERQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Fagerstorm Test for Nicotine Dependence (Ages 18+)",
+        "entry_type": "FTND",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Modified Fagerstorm Tolerance Questionnaire - Adolescents (Ages 13-17)",
+        "entry_type": "FTQA",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Geriatic Depression Scale (Ages 65-85)",
+        "entry_type": "GDS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Grip Strength 8-1-12",
+        "entry_type": "Grip_Strength_-8_1_12-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Grip Strength",
+        "entry_type": "Grip_Strength",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Height/Weight, Vitals",
+        "entry_type": "HT_WT__Vitals",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Inventory of Callous-Unemotional Traits - Parent Version",
+        "entry_type": "ICUP",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Inventory of Callous-Unemotional Traits - Youth Self Report (Ages 13+)",
+        "entry_type": "ICUY",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Incidental Finding",
+        "entry_type": "Incidental_Finding",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "International Physical Activity Questionnaire (Ages 15+)",
+        "entry_type": "IPAQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Interpersonal Reactivity Index (Ages 13+)",
+        "entry_type": "IRI",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Labs",
+        "entry_type": "Labs",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Lite Release Group Number",
+        "entry_type": "Lite_Release_Group_Number",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Multidimensional Anxiety Scale for Children (Ages 8-17)",
+        "entry_type": "MASC",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Med_HX - Child",
+        "entry_type": "Med_HX-_Child",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Med_HX - Adult",
+        "entry_type": "Med_HX-Adult",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Medical Conditions",
+        "entry_type": "Medical_Conditions",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Medications",
+        "entry_type": "Medications",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Medication Form_2 2-4-13",
+        "entry_type": "Medications_Form_2_-2_4_13-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "MET",
+        "entry_type": "MET",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Montreal Cognitive Assessment",
+        "entry_type": "MOCA",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Mock Scan",
+        "entry_type": "Mock_Scan",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "MRI Log Sheet",
+        "entry_type": "MRI_Log_Sheet",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "MRI3",
+        "entry_type": "MRI3",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "MRI Mind Wandering Questionnaire (Ages 13+)",
+        "entry_type": "MRIQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "NEO Five Factor Inventory (Ages 12+)",
+        "entry_type": "NEO-FFI-3",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "NFB3 MRI Mind Wandering Questionnaire",
+        "entry_type": "NFB3_MRIQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "National Instrument for Drug Abuse 3-19-13",
+        "entry_type": "NIDA_-3_19_13-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "NKI",
+        "entry_type": "NKI",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "OASR_AF",
+        "entry_type": "OASR_AF",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Older Adult Self Report (Ages 60+)",
+        "entry_type": "OASR",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Positive and Negative Affect Schedule-Short Form",
+        "entry_type": "PANAS-S",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Physical Activity Scale for the Elderly",
+        "entry_type": "PASE",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "21-Item Peters et al. Delusions Inventory (Ages 13+)",
+        "entry_type": "PDI-21",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Pegboard",
+        "entry_type": "Pegboard",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Penn_CNP 12-18-13",
+        "entry_type": "Penn_CNP_-12_18_13-",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "PhenX Sexual History",
+        "entry_type": "PhenX_Sexual_History",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Pittsburg Sleep Quality Assessment",
+        "entry_type": "PSQI",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "CCD Penn State Worry Questionnaire",
+        "entry_type": "CCDPSWQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Pereservative Thinking Questionnaire",
+        "entry_type": "PTQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "QME",
+        "entry_type": "QME",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Rey Auditory Verbal Learning Test",
+        "entry_type": "List_Learning",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Repetitive Behaviors Scale - Revised (Ages 6-17)",
+        "entry_type": "RBS-R",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Ruminative Response Scale",
+        "entry_type": "RRS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Response to Stress Questionnaire",
+        "entry_type": "RSQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Rapid Visual Information Processing Assessment",
+        "entry_type": "RVIP",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Hollingshead Four Factor Index of Socioeconomic Status - Adult",
+        "entry_type": "SES-Adult",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Hollingshead Four Factor Index of Socioeconomic Status - Child",
+        "entry_type": "SES-Child",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Sex Role Identity Scale",
+        "entry_type": "Sex-role_Identity_Scale",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Sexual Orientation Scale",
+        "entry_type": "Sexual_Orientation_Scale",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Short Imaginal Process Inventory",
+        "entry_type": "SIPI",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Social Network",
+        "entry_type": "Social_Network",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Social Responsiveness Scale-Parent Report (Ages 6-17)",
+        "entry_type": "SRS_-_Parent_Report",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "State Trait Anxiety Inventory (Ages 18+)",
+        "entry_type": "STAI",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Study Status",
+        "entry_type": "Study_Status",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Strengths and Weaknesses of ADHD Symptoms and Normal Behavior Scale (Ages 6-17)",
+        "entry_type": "SWAN",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Tanner",
+        "entry_type": "Tanner",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Tanner Three-Factor Eating (Ages 12+)",
+        "entry_type": "TFEQ",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Trauma Symptom Checklist for Adults (Ages 18+)",
+        "entry_type": "TSC-40",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Trauma Symptom Checklist for Children (Ages 8-17)",
+        "entry_type": "TSC-C",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "UCLA PTSD Reaction Index - Parent",
+        "entry_type": "UCLA-Parent",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "UCLA PTSD Reaction Index - Youth (Ages 8+)",
+        "entry_type": "UCLA_Youth",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "UPPS-P Impulsive Behavior Scale (Ages 18+)",
+        "entry_type": "UPPS-P",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Height",
+        "entry_type": "height",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "VINELAND Scoring",
+        "entry_type": "VINELAND-scoring",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "WWT",
+        "entry_type": "WWT",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Wechsler Abbreviated Scale of Intelligence",
+        "entry_type": "WASI-II",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Wechsler Individual Achievement Test - 2nd Edition Abbreviated",
+        "entry_type": "WIAT-IIA",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Yale-Brown Obsessive Compulsive Scale",
+        "entry_type": "Y-BOCS_&_CY-BOCS_Severity_Ratings",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Yale Global Tic Severity Scale (Ages 6+)",
+        "entry_type": "YGTSS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Youth Risk Behavior Surveillance System-HS (Ages 14-21)",
+        "entry_type": "YRBS-HS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Youth Risk Behavior Surveillance System-MS (Ages 11-13)",
+        "entry_type": "YRBS-MS",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "YSR-AF",
+        "entry_type": "YSR-AF",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Youth Self Report (Ages 11-17)",
+        "entry_type": "YSR",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Deviation Form",
+        "entry_type": "Deviation_form",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Study Number",
+        "entry_type": "Study_Number",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Satisfaction Survey-Adult",
+        "entry_type": "Satisfaction_Survey-Adult",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "Zip Code",
+        "entry_type": "Zip_Code",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
+      },
+      {
+        "name": "SCAN",
+        "entry_type": "SCAN",
+        "fields": [
+          {
+            "function_name": "get_qc_viewer",
+            "id": "name",
+            "name": "Subject"
+          }
+        ],
+        "graph_type": "histogram",
+        "staticURL": "https://dxugxjm290185.cloudfront.net/hbn/",
+        "usePeerJS": false,
+        "logPainter": false,
+        "logContours": false,
+        "logPoints": true,
+        "qc_options": {}
       }
-  ]
+    ]
   }
 }
