@@ -12,8 +12,7 @@ curl https://install.meteor.com/ | sh
 Clone this repository
 
 ```
-git clone https://github.com/manwithadodla/mindcontrol_md/mindcontrol_kesh
-```
+git clone https://github.com/computational-neuroimaging-lab/mindcontrol.git
 
 start the server
 
