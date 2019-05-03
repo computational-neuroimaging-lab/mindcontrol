@@ -13,9 +13,8 @@ Clone this repository
 
 ```
 git clone https://github.com/computational-neuroimaging-lab/mindcontrol.git
-
+```
 start the server
-
 ```
 cd mindcontrol
 meteor --settings test_settings.json
