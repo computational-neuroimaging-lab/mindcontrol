@@ -10,7 +10,7 @@ if (Meteor.isServer) {
 
  Meteor.startup(function () {
   //add email address for outgoing emails
-  process.env.MAIL_URL = 'smtps://--email--:--password--@smtp.gmail.com:465/'
+  process.env.MAIL_URL = 'smtps://cnlnoreply:cnInorepIy@smtp.gmail.com:465/'
 
     if (Subjects.find().count() === 0) {
 
